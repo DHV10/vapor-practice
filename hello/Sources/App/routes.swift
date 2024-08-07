@@ -16,4 +16,6 @@ func routes(_ app: Application) throws {
     try app.register(collection: JSONController())
     
     try app.register(collection: MovieController())
+    
+    try app.register(collection: ReviewController())
 }

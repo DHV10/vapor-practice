@@ -50,10 +50,8 @@ struct JSONController: RouteCollection {
     }
     
     func create(req: Request) throws -> HTTPStatus {
-        
         let user = try req.content.decode(User.self)
         print(user)
         return HTTPStatus.ok
-        
     }
 }

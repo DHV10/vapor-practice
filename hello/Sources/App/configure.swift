@@ -10,5 +10,6 @@ public func configure(_ app: Application) async throws {
     
     app.databases.use(.postgres(hostname: "localhost", username: "postgres", password: "", database: "dhv11"), as: .psql)
     app.migrations.add(CreateMovie())
+    app.migrations.add(CreateReview())
     try routes(app)
 }
