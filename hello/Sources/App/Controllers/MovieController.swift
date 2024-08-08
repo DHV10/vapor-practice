@@ -16,7 +16,10 @@ struct MovieController: RouteCollection {
         }
         
         routes.get("movies") { req in
-            Movie.query(on: req.db).with(\.$reviews).all()
+            Movie.query(on: req.db)
+                .with(\.$actors)
+                .with(\.$reviews)
+                .all()
         }
         
         routes.get("movies", ":movieId") { req -> EventLoopFuture<Movie> in
